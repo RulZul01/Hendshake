@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #212529;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --border-color: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --foreground: #f3f4f6;
+    --border-color: #1f2937;
+  }
+}
+
+body {
+  @apply text-[var(--foreground)] bg-[var(--background)] font-sans;
+}
+
+input, select {
+  @apply border border-[var(--border-color)] p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary)];
+}
+
+button {
+  @apply px-4 py-2 rounded-md font-semibold transition-all duration-200;
+}
+
+button.primary {
+  @apply text-[var(--primary)] border border-[var(--primary)] 
+    bg-transparent hover:bg-[var(--primary)] hover:text-white 
+    px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-sm;
+}
+
+button.danger {
+  @apply text-[var(--danger)] border border-[var(--danger)] 
+    bg-transparent hover:bg-[var(--danger)] hover:text-white 
+    px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-sm;
+}
